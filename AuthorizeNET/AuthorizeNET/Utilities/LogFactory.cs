@@ -5,7 +5,7 @@
 
     public static class LogFactory
     {
-        private static ILoggerFactory LoggerFactory => new LoggerFactory().AddDebug(LogLevel.Debug);
+        private static ILoggerFactory LoggerFactory => new LoggerFactory().AddLog4Net();
 
         public static ILogger getLog(Type classType)
         {
