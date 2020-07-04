@@ -7,13 +7,14 @@
     {
         public static ILogger CustomLogger { get; set; }
 
-        private static ILoggerFactory LoggerFactory => new LoggerFactory().AddLog4Net();
+        //private static ILoggerFactory LoggerFactory => new LoggerFactory().AddLog4Net();
 
         public static ILogger getLog(Type classType)
         {
             if(CustomLogger!=null)
                 return CustomLogger;
-            return LoggerFactory.CreateLogger(classType.FullName);
+            return new LoggerFactory().CreateLogger("AuthorizeNet");
+            //return LoggerFactory.CreateLogger(classType.FullName);
         }
     }
 }
